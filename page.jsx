@@ -1,21 +1,21 @@
 "use client";
 
 import React from "react";
-import { useTools } from "./context/ToolsContext";
+import { useTools } from "./context/ToolsContext.jsx";
 
 // Modules
-import SeoAudit from "./modules/seo/SeoAudit";
-import LighthouseScore from "./modules/performance/LighthouseScore";
-import PerformanceTimeline from "./modules/performance/PerformanceTimeline";
-import TtfbDashboard from "./modules/performance/TtfbDashboard";
-import HydrationProfiler from "./modules/performance/HydrationProfiler";
-import { CriticalCss } from "./modules/build/CriticalCss";
-import { ComponentTree } from "./modules/build/ComponentTree";
-import { RuntimeComparison } from "./modules/runtime/RuntimeComparison";
-import { CacheSimulator } from "./modules/runtime/CacheSimulator";
-import { BrowserApis } from "./modules/runtime/BrowserApis";
-import { A11yAudit } from "./modules/accessibility/A11yAudit";
-import AuditPdfExport from "./modules/reporting/AuditPdfExport";
+import SeoAudit from "./modules/seo/SeoAudit.jsx";
+import LighthouseScore from "./modules/performance/LighthouseScore.jsx";
+import PerformanceTimeline from "./modules/performance/PerformanceTimeline.jsx";
+import TtfbDashboard from "./modules/performance/TtfbDashboard.jsx";
+import HydrationProfiler from "./modules/performance/HydrationProfiler.jsx";
+import { CriticalCss } from "./modules/build/CriticalCss.jsx";
+import { ComponentTree } from "./modules/build/ComponentTree.jsx";
+import { RuntimeComparison } from "./modules/runtime/RuntimeComparison.jsx";
+import { CacheSimulator } from "./modules/runtime/CacheSimulator.jsx";
+import { BrowserApis } from "./modules/runtime/BrowserApis.jsx";
+import { A11yAudit } from "./modules/accessibility/A11yAudit.jsx";
+import AuditPdfExport from "./modules/reporting/AuditPdfExport.jsx";
 import { Search, Zap, Box, Cpu, Accessibility, FileText } from "lucide-react";
 
 export default function ToolsPage() {

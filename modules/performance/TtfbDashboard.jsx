@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Card, Table } from "../../components/ui";
+import { Card, Table } from "../../components/ui/index.js";
 
 export default function TtfbDashboard() {
   const [timing, setTiming] = useState(null);

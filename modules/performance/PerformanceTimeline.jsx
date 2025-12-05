@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Card, Timeline } from "../../components/ui";
+import { Card, Timeline } from "../../components/ui/index.js";
 
 export default function PerformanceTimeline() {
   const [entries, setEntries] = useState([]);

@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Card, Section, Badge } from "../../components/ui";
-import { OgInspector } from "./OgInspector";
-import { RobotsInspector } from "./RobotsInspector";
-import { SitemapInspector } from "./SitemapInspector";
+import { Card, Section, Badge } from "../../components/ui/index.js";
+import { OgInspector } from "./OgInspector.jsx";
+import { RobotsInspector } from "./RobotsInspector.jsx";
+import { SitemapInspector } from "./SitemapInspector.jsx";
 
 export default function SeoAudit() {
   return (

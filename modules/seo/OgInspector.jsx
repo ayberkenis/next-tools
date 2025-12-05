@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card } from "../../components/ui";
+import { Card } from "../../components/ui/index.js";
 
 export function OgInspector() {
   return (

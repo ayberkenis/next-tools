@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Card, Gauge } from "../../components/ui";
-import { useTools } from "../../context/ToolsContext";
+import { Card, Gauge } from "../../components/ui/index.js";
+import { useTools } from "../../context/ToolsContext.jsx";
 
 export default function LighthouseScore() {
   const { scores, setScores } = useTools();

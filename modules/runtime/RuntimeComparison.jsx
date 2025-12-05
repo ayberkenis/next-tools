@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Card, Table, Badge } from "../../components/ui";
+import { Card, Table, Badge } from "../../components/ui/index.js";
 
 export function RuntimeComparison() {
   const [runtime, setRuntime] = useState("Loading...");

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { ToolsProvider, useTools } from "./context/ToolsContext";
-import { toolsConfig } from "./index";
+import { ToolsProvider, useTools } from "./context/ToolsContext.jsx";
+import { toolsConfig } from "./index.js";
 
 export default function ToolsLayout({ children }) {
   // In a real app, we might check headers/auth here or in the server component wrapper

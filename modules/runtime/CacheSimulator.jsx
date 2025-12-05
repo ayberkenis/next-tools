@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, Section } from "../../components/ui";
+import { Card, Section } from "../../components/ui/index.js";
 
 export function CacheSimulator() {
   const [config, setConfig] = useState({

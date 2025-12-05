@@ -1,3 +1,3 @@
-import { toolsConfig } from "./index";
+import { toolsConfig } from "./index.js";
 
 export default toolsConfig;

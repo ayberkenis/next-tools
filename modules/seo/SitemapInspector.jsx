@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card, Badge } from "../../components/ui";
+import { Card, Badge } from "../../components/ui/index.js";
 
 export function SitemapInspector() {
   return (

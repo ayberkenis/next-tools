@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Card } from "../../components/ui";
-import { useTools } from "../../context/ToolsContext";
+import { Card } from "../../components/ui/index.js";
+import { useTools } from "../../context/ToolsContext.jsx";
 
 export default function AuditPdfExport() {
   const { scores, findings } = useTools();
