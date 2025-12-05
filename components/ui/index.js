@@ -1,4 +1,5 @@
 export * from "./Badge.jsx";
+export * from "./Button.jsx";
 export * from "./Card.jsx";
 export * from "./Gauge.jsx";
 export * from "./Section.jsx";

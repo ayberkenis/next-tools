@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Card } from "../../components/ui/index.js";
+import { Card, Button } from "../../components/ui/index.js";
 import { useTools } from "../../context/ToolsContext.jsx";
+import { Download } from "lucide-react";
 
 export default function AuditPdfExport() {
   const { scores, findings } = useTools();
@@ -13,15 +14,15 @@ export default function AuditPdfExport() {
 
   return (
     <Card title="Audit Report">
-      <p className="text-neutral-600 dark:text-neutral-400 mb-4">
-        Generate a PDF report of the current audit findings and scores.
-      </p>
-      <button
-        onClick={handlePrint}
-        className="bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 rounded hover:opacity-90"
-      >
-        Export Pre-Production Audit (PDF)
-      </button>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p className="text-neutral-600 dark:text-neutral-400">
+          Generate a PDF report of the current audit findings and scores.
+        </p>
+        <Button onClick={handlePrint} className="flex gap-2">
+          <Download size={16} />
+          Export PDF
+        </Button>
+      </div>
 
       {/* Hidden print-only summary */}
       <div className="hidden print:block fixed inset-0 bg-white z-50 p-8">

@@ -18,6 +18,21 @@ If you are using Next.js 16 (Canary/Beta) or encounter peer dependency conflicts
 npm install git+https://github.com/ayberkenis/next-tools.git --legacy-peer-deps
 ```
 
+## Configuration (Required)
+
+Since this package is distributed as raw source code (JSX), you **must** add it to `transpilePackages` in your `next.config.js`:
+
+`next.config.js` or `next.config.mjs`:
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ["next-tools"],
+};
+
+module.exports = nextConfig;
+```
+
 ## Usage
 
 1. Create the tools route in your App Router:
