@@ -1,12 +1,12 @@
 {
   "name": "next-tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Next.js developer toolkit plugin",
   "main": "index.js",
   "exports": {
     ".": "./index.js",
     "./config": "./config.js",
-    "./layout": "./layout.jsx",
+    "./NextTools": "./NextTools.jsx",
     "./page": "./page.jsx",
     "./modules/*": "./modules/*",
     "./context/*": "./context/*",

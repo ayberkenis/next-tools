@@ -35,31 +35,24 @@ module.exports = nextConfig;
 
 ## Usage
 
-1. Create the tools route in your App Router:
+Add the `<NextTools />` component to your root layout.
 
-`src/app/__tools/layout.jsx`:
+`src/app/layout.jsx`:
 
 ```jsx
-import ToolsLayout from "next-tools/layout";
+import NextTools from "next-tools";
 
-export const metadata = {
-  title: "Next.js Tools",
-  robots: "noindex, nofollow",
-};
-
-export default function Layout({ children }) {
-  return <ToolsLayout>{children}</ToolsLayout>;
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        {/* Add this component at the end of your body */}
+        <NextTools />
+      </body>
+    </html>
+  );
 }
 ```
 
-`src/app/__tools/page.jsx`:
-
-```jsx
-import ToolsPage from "next-tools/page";
-
-export default function Page() {
-  return <ToolsPage />;
-}
-```
-
-2. Configure (Optional) in `src/next-tools.config.js` or pass props.
+The tool will appear as a floating action button in the bottom-right corner of your application.

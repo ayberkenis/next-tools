@@ -1,17 +1,5 @@
-const defaultConfig = {
-  enableSeo: true,
-  enablePerformance: true,
-  enableBuild: true,
-  enableRuntime: true,
-  enableA11y: true,
-  enableReporting: true,
-  protected: process.env.NODE_ENV === "production",
-  allowedHeaderKey: "x-next-tools",
-  allowedHeaderValue: process.env.NEXT_TOOLS_SECRET || "dev-tools",
-};
+import NextTools from "./NextTools.jsx";
+import { toolsConfig } from "./index.js"; // existing config
 
-export function nextTools(userConfig = {}) {
-  return { ...defaultConfig, ...userConfig };
-}
-
-export const toolsConfig = nextTools();
+export default NextTools;
+export { toolsConfig };
