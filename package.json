@@ -1,0 +1,23 @@
+{
+  "name": "next-tools",
+  "version": "0.1.1",
+  "description": "Next.js developer toolkit plugin",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./config": "./config.js",
+    "./layout": "./layout.jsx",
+    "./page": "./page.jsx",
+    "./modules/*": "./modules/*",
+    "./context/*": "./context/*",
+    "./components/*": "./components/*"
+  },
+  "peerDependencies": {
+    "next": ">=14.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0"
+  }
+}
