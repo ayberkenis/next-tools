@@ -1,0 +1,15 @@
+{
+  "name": "next-tools",
+  "version": "0.1.0",
+  "description": "Next.js developer toolkit plugin",
+  "main": "index.js",
+  "peerDependencies": {
+    "next": ">=14.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.0.1"
+  }
+}
+
