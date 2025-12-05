@@ -7,21 +7,18 @@ export function Tabs({ tabs, defaultTab, className = "" }) {
 
   return (
     <div className={className}>
-      <div className="border-b border-neutral-200 dark:border-neutral-800 mb-4">
-        <nav
-          className="-mb-px flex space-x-8 overflow-x-auto"
-          aria-label="Tabs"
-        >
+      <div className="border-b border-neutral-200 mb-6">
+        <nav className="-mb-px flex space-x-8" aria-label="Tabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`
-                whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors
+                whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm transition-colors
                 ${
                   activeTab === tab.id
-                    ? "border-blue-500 text-blue-600 dark:text-blue-400"
-                    : "border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300 dark:text-neutral-400 dark:hover:text-neutral-300"
+                    ? "border-neutral-900 text-neutral-900"
+                    : "border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300"
                 }
               `}
             >
@@ -30,7 +27,7 @@ export function Tabs({ tabs, defaultTab, className = "" }) {
           ))}
         </nav>
       </div>
-      <div className="mt-2">
+      <div className="mt-4">
         {tabs.find((t) => t.id === activeTab)?.content}
       </div>
     </div>

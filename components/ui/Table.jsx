@@ -2,21 +2,21 @@ import React from "react";
 
 export function Table({ headers, data, renderRow, className = "" }) {
   return (
-    <div className={`overflow-x-auto ${className}`}>
-      <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-800">
-        <thead>
-          <tr>
+    <div className={`w-full overflow-auto ${className}`}>
+      <table className="w-full caption-bottom text-sm">
+        <thead className="[&_tr]:border-b">
+          <tr className="border-b transition-colors hover:bg-neutral-100/50 data-[state=selected]:bg-neutral-100">
             {headers.map((h, i) => (
               <th
                 key={i}
-                className="px-4 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider"
+                className="h-12 px-4 text-left align-middle font-medium text-neutral-500 [&:has([role=checkbox])]:pr-0"
               >
                 {h}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="bg-white dark:bg-neutral-900 divide-y divide-neutral-200 dark:divide-neutral-800">
+        <tbody className="[&_tr:last-child]:border-0">
           {data.map((row, i) => renderRow(row, i))}
         </tbody>
       </table>

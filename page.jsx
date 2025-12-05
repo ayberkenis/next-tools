@@ -16,7 +16,15 @@ import { CacheSimulator } from "./modules/runtime/CacheSimulator.jsx";
 import { BrowserApis } from "./modules/runtime/BrowserApis.jsx";
 import { A11yAudit } from "./modules/accessibility/A11yAudit.jsx";
 import AuditPdfExport from "./modules/reporting/AuditPdfExport.jsx";
-import { Search, Zap, Box, Cpu, Accessibility, FileText } from "lucide-react";
+import {
+  Search,
+  Zap,
+  Box,
+  Cpu,
+  Accessibility,
+  FileText,
+  ArrowRight,
+} from "lucide-react";
 
 export default function ToolsPage() {
   const { activeModule, setActiveModule } = useTools();
@@ -58,11 +66,13 @@ export default function ToolsPage() {
 
   // Default: Dashboard
   return (
-    <div className="space-y-6">
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-2">Overview</h2>
-        <p className="text-neutral-500">
-          Welcome to your Next.js pre-production toolkit.
+    <div className="space-y-8">
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight text-neutral-900">
+          Overview
+        </h2>
+        <p className="text-neutral-500 mt-2 text-lg">
+          Your application health at a glance.
         </p>
       </div>
 
@@ -70,38 +80,38 @@ export default function ToolsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <DashboardCard
-          title="SEO"
-          description="Check metadata, robots, and sitemaps."
+          title="SEO Audit"
+          description="Check metadata, robots.txt, and sitemaps."
           icon={Search}
           onClick={() => setActiveModule("seo")}
         />
         <DashboardCard
           title="Performance"
-          description="Analyze TTFB, hydration, and timeline."
+          description="Analyze TTFB, hydration, and Core Web Vitals."
           icon={Zap}
           onClick={() => setActiveModule("performance")}
         />
         <DashboardCard
-          title="Build & RSC"
-          description="Inspect CSS and component tree."
+          title="Build Analysis"
+          description="Inspect Critical CSS and component tree."
           icon={Box}
           onClick={() => setActiveModule("build")}
         />
         <DashboardCard
           title="Runtime"
-          description="Check browser APIs and simulating cache."
+          description="Browser APIs and cache simulation."
           icon={Cpu}
           onClick={() => setActiveModule("runtime")}
         />
         <DashboardCard
           title="Accessibility"
-          description="WCAG checklist and contrast."
+          description="WCAG checklist and contrast ratios."
           icon={Accessibility}
           onClick={() => setActiveModule("accessibility")}
         />
         <DashboardCard
           title="Reporting"
-          description="Export audit reports."
+          description="Export full audit reports to PDF."
           icon={FileText}
           onClick={() => setActiveModule("reporting")}
         />
@@ -114,19 +124,20 @@ function DashboardCard({ title, description, icon: Icon, onClick }) {
   return (
     <div
       onClick={onClick}
-      className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 rounded-lg hover:shadow-md transition-shadow cursor-pointer group"
+      className="bg-white border border-neutral-200 p-6 rounded-xl hover:shadow-md hover:border-neutral-300 transition-all cursor-pointer group relative overflow-hidden"
     >
-      <div className="flex items-center gap-3 mb-2">
+      <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0 duration-200">
+        <ArrowRight size={20} className="text-neutral-400" />
+      </div>
+      <div className="flex items-center gap-3 mb-4">
         {Icon && (
-          <div className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-md text-neutral-600 dark:text-neutral-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <div className="p-2.5 bg-neutral-100 rounded-lg text-neutral-600 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
             <Icon size={20} />
           </div>
         )}
-        <h3 className="font-semibold text-lg group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-          {title}
-        </h3>
+        <h3 className="font-semibold text-lg text-neutral-900">{title}</h3>
       </div>
-      <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+      <p className="text-neutral-500 text-sm leading-relaxed pr-6">
         {description}
       </p>
     </div>

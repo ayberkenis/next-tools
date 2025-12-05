@@ -9,23 +9,23 @@ export function Gauge({ value, max = 100, label, color = "blue", size = 120 }) {
   const rotation = -90;
 
   const colors = {
-    blue: "stroke-blue-500 text-blue-500",
-    green: "stroke-green-500 text-green-500",
-    yellow: "stroke-yellow-500 text-yellow-500",
+    blue: "stroke-neutral-900 text-neutral-900",
+    green: "stroke-emerald-600 text-emerald-600",
+    yellow: "stroke-amber-500 text-amber-500",
     red: "stroke-red-500 text-red-500",
   };
 
   const selectedColor = colors[color] || colors.blue;
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center p-4">
       <div className="relative" style={{ width: size, height: size }}>
         <svg
           className="w-full h-full transform"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
           <circle
-            className="text-neutral-200 dark:text-neutral-800 stroke-current"
+            className="text-neutral-100 stroke-current"
             strokeWidth="8"
             fill="transparent"
             r={radius}
@@ -45,13 +45,17 @@ export function Gauge({ value, max = 100, label, color = "blue", size = 120 }) {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center flex-col">
-          <span className={`text-2xl font-bold ${selectedColor.split(" ")[1]}`}>
+          <span
+            className={`text-3xl font-bold tracking-tighter ${
+              selectedColor.split(" ")[1]
+            }`}
+          >
             {Math.round(value)}
           </span>
         </div>
       </div>
       {label && (
-        <span className="mt-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+        <span className="mt-3 text-sm font-medium text-neutral-500 uppercase tracking-wide">
           {label}
         </span>
       )}

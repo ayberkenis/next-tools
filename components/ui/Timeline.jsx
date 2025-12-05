@@ -7,7 +7,9 @@ export function Timeline({ items }) {
   // We need to normalize to 0-100% based on total time window
   if (!items || items.length === 0)
     return (
-      <div className="text-sm text-neutral-500">No timeline data available</div>
+      <div className="text-sm text-neutral-500 italic">
+        No timeline data available
+      </div>
     );
 
   const minStart = Math.min(...items.map((i) => i.start));
@@ -15,35 +17,34 @@ export function Timeline({ items }) {
   const totalDuration = maxEnd - minStart || 1;
 
   return (
-    <div className="w-full space-y-2 font-mono text-xs">
+    <div className="w-full space-y-3 font-mono text-xs">
       {items.map((item, idx) => {
         const left = ((item.start - minStart) / totalDuration) * 100;
         const width = Math.max((item.duration / totalDuration) * 100, 0.5); // Min 0.5% width
 
         return (
-          <div key={idx} className="relative flex items-center h-6 group">
+          <div key={idx} className="relative flex items-center h-7 group">
             <div
-              className="w-32 truncate text-neutral-500 pr-2 text-right flex-shrink-0"
+              className="w-36 truncate text-neutral-500 pr-4 text-right flex-shrink-0 font-medium"
               title={item.label}
             >
               {item.label}
             </div>
-            <div className="flex-grow relative h-full bg-neutral-50 dark:bg-neutral-900 rounded overflow-hidden">
+            <div className="flex-grow relative h-full bg-neutral-100 rounded-sm overflow-hidden">
               <div
-                className={`absolute h-4 top-1 rounded ${
-                  item.color || "bg-blue-400"
-                }`}
+                className={`absolute h-4 top-1.5 rounded-sm ${
+                  item.color || "bg-neutral-900"
+                } opacity-80 group-hover:opacity-100 transition-opacity`}
                 style={{ left: `${left}%`, width: `${width}%` }}
               ></div>
-              {/* Tooltip on hover could go here */}
             </div>
-            <div className="w-20 text-neutral-400 text-xs pl-2 flex-shrink-0">
+            <div className="w-20 text-neutral-500 text-xs pl-4 flex-shrink-0 tabular-nums">
               {Math.round(item.duration)}ms
             </div>
           </div>
         );
       })}
-      <div className="flex justify-between w-full pl-32 text-xs text-neutral-400 pt-1 border-t border-neutral-200 dark:border-neutral-800">
+      <div className="flex justify-between w-full pl-36 pr-20 text-[10px] text-neutral-400 pt-2 border-t border-neutral-100 mt-2">
         <span>0ms</span>
         <span>{Math.round(totalDuration)}ms</span>
       </div>
